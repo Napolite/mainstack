@@ -5,7 +5,7 @@ function MainStack() {
   return (
     <div>
       <Navbar />
-      <div>
+      <div className="mt-[4rem] w-[1159px] mx-auto">
         <GraphAnalytics />
       </div>
     </div>
