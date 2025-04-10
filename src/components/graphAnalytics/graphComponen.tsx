@@ -1,7 +1,6 @@
 import { ChartContainer } from "@mui/x-charts/ChartContainer";
 import {
   LinePlot,
-  MarkPlot,
   lineElementClasses,
   markElementClasses,
 } from "@mui/x-charts/LineChart";

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { CiCircleInfo } from "react-icons/ci";
 
 function Balances() {
@@ -13,6 +13,15 @@ function Balances() {
     totalRevenue: 175580,
     pendingPayout: 0.0,
   });
+
+  useEffect(() => {
+    setBalances({
+      ledger: 0,
+      totalPayout: 55080,
+      totalRevenue: 175580,
+      pendingPayout: 0.0,
+    });
+  }, []);
 
   return (
     <div className="h-[360px] w-[360271 flex flex-col justify-between items-center">
