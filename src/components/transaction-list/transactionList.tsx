@@ -1,5 +1,5 @@
 import { GoArrowDownLeft as Success } from "react-icons/go";
-import { GoArrowDownRight as Failed } from "react-icons/go";
+import { GoArrowUpRight as Failed } from "react-icons/go";
 import { Transaction } from "../../page/types";
 
 function TransactionList({ transaction }: { transaction: Transaction }) {
@@ -9,7 +9,7 @@ function TransactionList({ transaction }: { transaction: Transaction }) {
 
   const getStatus = (tx: "withdrawal" | "deposit" | string) => {
     console.log("txxxxx", tx);
-    if (tx === "withdrawal") return true;
+    if (tx === "deposit") return true;
     else return false;
   };
 
