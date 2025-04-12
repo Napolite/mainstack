@@ -4,7 +4,7 @@ import GraphAnalytics from "../components/graphAnalytics";
 import Navbar from "../components/navbar";
 import Transactions from "../components/transaction-list/transactions";
 import axios from "axios";
-import { USerType, WalletType } from "./types";
+import { Transaction, USerType, WalletType } from "./types";
 
 function MainStack() {
   const [user, setUser] = useState<USerType>({
@@ -12,6 +12,7 @@ function MainStack() {
     first_name: "",
     last_name: "",
   });
+
   const [walletData, setWalletData] = useState<WalletType>({
     balance: 0,
     ledger_balance: 0,
@@ -19,13 +20,17 @@ function MainStack() {
     total_payout: 0,
     total_revenue: 0,
   });
+
+  const [txData, setTxData] = useState<Transaction[] | any>();
   const fetchUserData = async () => {
     const base = import.meta.env.VITE_BASEURL;
     const userData = await axios.get(`${base}/user`);
     const walletData = await axios.get(`${base}/wallet`);
+    const txDataUrl = await axios.get(`${base}/transactions`);
+
     setUser(userData?.data);
     setWalletData(walletData?.data);
-    console.log(walletData);
+    setTxData(txDataUrl?.data);
   };
 
   useEffect(() => {
@@ -39,7 +44,7 @@ function MainStack() {
         <Balances balances={walletData} />
       </div>
       <div className="mt-[100px] mx-auto  w-[72.5rem]">
-        <Transactions />
+        <Transactions tx={txData} />
       </div>
     </div>
   );

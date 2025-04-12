@@ -1,7 +1,6 @@
 import GraphComponent from "./graphComponen";
 
 function GraphAnalytics({ balance }: { balance: number }) {
-  console.log("balance", balance);
   return (
     <div>
       <div className="w-[28.875rem] h-[72px] flex justify-between items-center">
