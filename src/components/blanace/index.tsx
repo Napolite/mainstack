@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { CiCircleInfo } from "react-icons/ci";
 import { WalletType } from "../../page/types";
 
