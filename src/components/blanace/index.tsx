@@ -29,7 +29,11 @@ function Balances() {
         <div>
           <div className="text-[14px] text-[#56616b]">Ledger Balance</div>
           <div className="text-[#131316] text-[26px] font-[700]">
-            USD {Number(balances?.pendingPayout.toFixed(2)).toLocaleString()}
+            USD{" "}
+            {balances?.pendingPayout.toLocaleString("en-US", {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            })}
           </div>
         </div>
         <CiCircleInfo />
@@ -38,7 +42,11 @@ function Balances() {
         <div>
           <div className="text-[14px] text-[#56616b]">Total Payout</div>
           <div className="text-[#131316] text-[26px] font-[700]">
-            USD {Number(balances?.totalPayout.toFixed(2)).toLocaleString()}
+            USD{" "}
+            {balances?.totalPayout?.toLocaleString("en-US", {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            })}
           </div>
         </div>
         <CiCircleInfo />
@@ -47,7 +55,11 @@ function Balances() {
         <div>
           <div className="text-[14px] text-[#56616b]">Total Revenue</div>
           <div className="text-[#131316] text-[26px] font-[700]">
-            USD {balances?.totalRevenue.toFixed(2).toLocaleString()}
+            USD{" "}
+            {balances?.totalRevenue.toLocaleString("en-US", {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            })}
           </div>
         </div>
         <CiCircleInfo />
@@ -56,7 +68,11 @@ function Balances() {
         <div>
           <div className="text-[14px] text-[#56616b]">Pending Payout</div>
           <div className="text-[#131316] text-[26px] font-[700]">
-            USD {balances?.pendingPayout.toFixed(2).toLocaleString()}
+            USD{" "}
+            {balances?.pendingPayout.toLocaleString("en-US", {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            })}
           </div>
         </div>
         <CiCircleInfo />
