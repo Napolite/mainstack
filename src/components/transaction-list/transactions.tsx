@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { MdOutlineFileDownload } from "react-icons/md";
+import TransactionList from "./transactionList";
 
 interface Transaction {
   title: string;
@@ -81,15 +82,20 @@ function Transactions() {
             Your transactions for the last the last 7 days
           </div>
         </div>
-        <div className="flex w-[16.125rem] justify-between items-center">
-          <button className=" flex items-center gap-[4px] text-center justify-center w-[139px] h-[48px] bg-[#EFF1F6] rounded-[100px] text-[16px] mr-[0.625rem]">
+        <div className="flex w-[16.125rem] items-center gap-[12px] justify-between">
+          <button className=" flex items-center gap-[4px] text-center justify-center w-[139px] h-[48px] bg-[#EFF1F6] rounded-[100px] text-[16px]">
             Filter
             <MdKeyboardArrowDown />
           </button>
-          <button className=" flex items-center gap-[4px] text-center justify-center w-[139px] h-[48px] bg-[#EFF1F6] rounded-[100px] text-[16px] mr-[0.625rem]">
+          <button className=" flex items-center gap-[4px] text-center justify-center w-[139px] h-[48px] bg-[#EFF1F6] rounded-[100px] text-[16px]">
             Export List <MdOutlineFileDownload />
           </button>
         </div>
+      </div>
+      <div className="mt-[60px]">
+        {transactions?.map((tx) => (
+          <TransactionList transaction={tx} />
+        ))}
       </div>
     </div>
   );
