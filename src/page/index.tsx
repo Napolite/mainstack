@@ -36,7 +36,7 @@ function MainStack() {
       <Navbar user={user} />
       <div className="mt-[4rem] w-[72.5rem] mx-auto flex justify-between items-center ">
         <GraphAnalytics balance={walletData?.balance} />
-        <Balances />
+        <Balances balances={walletData} />
       </div>
       <div className="mt-[100px] mx-auto  w-[72.5rem]">
         <Transactions />

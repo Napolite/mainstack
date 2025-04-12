@@ -1,28 +1,8 @@
 import React, { useEffect } from "react";
 import { CiCircleInfo } from "react-icons/ci";
+import { WalletType } from "../../page/types";
 
-function Balances() {
-  const [balances, setBalances] = React.useState<{
-    ledger: number;
-    totalPayout: number;
-    totalRevenue: number;
-    pendingPayout: number;
-  }>({
-    ledger: 0,
-    totalPayout: 55080,
-    totalRevenue: 175580,
-    pendingPayout: 0.0,
-  });
-
-  useEffect(() => {
-    setBalances({
-      ledger: 0,
-      totalPayout: 55080,
-      totalRevenue: 175580,
-      pendingPayout: 0.0,
-    });
-  }, []);
-
+function Balances({ balances }: { balances: WalletType }) {
   return (
     <div className="h-[360px] w-[360271 flex flex-col justify-between items-center">
       <div className="w-[271px] h-[66px] flex items-center justify-between">
@@ -30,7 +10,7 @@ function Balances() {
           <div className="text-[14px] text-[#56616b]">Ledger Balance</div>
           <div className="text-[#131316] text-[26px] font-[700]">
             USD{" "}
-            {balances?.pendingPayout.toLocaleString("en-US", {
+            {balances?.pending_payout.toLocaleString("en-US", {
               minimumFractionDigits: 2,
               maximumFractionDigits: 2,
             })}
@@ -43,7 +23,7 @@ function Balances() {
           <div className="text-[14px] text-[#56616b]">Total Payout</div>
           <div className="text-[#131316] text-[26px] font-[700]">
             USD{" "}
-            {balances?.totalPayout?.toLocaleString("en-US", {
+            {balances?.total_payout?.toLocaleString("en-US", {
               minimumFractionDigits: 2,
               maximumFractionDigits: 2,
             })}
@@ -56,7 +36,7 @@ function Balances() {
           <div className="text-[14px] text-[#56616b]">Total Revenue</div>
           <div className="text-[#131316] text-[26px] font-[700]">
             USD{" "}
-            {balances?.totalRevenue.toLocaleString("en-US", {
+            {balances?.total_revenue.toLocaleString("en-US", {
               minimumFractionDigits: 2,
               maximumFractionDigits: 2,
             })}
@@ -69,7 +49,7 @@ function Balances() {
           <div className="text-[14px] text-[#56616b]">Pending Payout</div>
           <div className="text-[#131316] text-[26px] font-[700]">
             USD{" "}
-            {balances?.pendingPayout.toLocaleString("en-US", {
+            {balances?.pending_payout.toLocaleString("en-US", {
               minimumFractionDigits: 2,
               maximumFractionDigits: 2,
             })}
