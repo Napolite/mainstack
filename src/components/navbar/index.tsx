@@ -8,7 +8,7 @@ import { CiBellOn } from "react-icons/ci";
 import { BsChatLeftText } from "react-icons/bs";
 import { CiMenuBurger } from "react-icons/ci";
 
-function Navbar() {
+function Navbar({ user }: any) {
   return (
     <div className="flex w-full h-[4rem] bg-white shadow shadow-md shadow-[rgba(45, 59, 67, 0.05)] items-center justify-between px-[24px] bg-[red] rounded-[100px]">
       <img src={Logo} width={36} height={36} />
@@ -43,7 +43,8 @@ function Navbar() {
         </div>
         <div className="flex w-[5.063rem] h-[2.5rem] items-center bg-[#EFF1F6] rounded-[100px] pt-[4px] pl-[5px] pb-[4px] pr-[12px] gap-[10px]">
           <div className="w-[32px] h-[32px] flex place-items-center rounded-[100px] bg-radial-[at_25%_25%] from-[#5C6670] to-[#131316] to-75% text-[#FFFFFF] text-[14px] font-[600] justify-center">
-            OJ
+            {user?.first_name?.charAt(0)}
+            {user?.last_name?.charAt(0)}
           </div>
           <CiMenuBurger />
         </div>

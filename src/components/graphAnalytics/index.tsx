@@ -1,6 +1,7 @@
 import GraphComponent from "./graphComponen";
 
-function GraphAnalytics() {
+function GraphAnalytics({ balance }: { balance: number }) {
+  console.log("balance", balance);
   return (
     <div>
       <div className="w-[28.875rem] h-[72px] flex justify-between items-center">
@@ -9,7 +10,11 @@ function GraphAnalytics() {
             Available Balance
           </p>
           <p className="tracking-[-1.5px] leading-[48px] text-[34px] font-[700] text-[#131316] w-full">
-            USD 120,500.00
+            USD{" "}
+            {balance.toLocaleString("en-us", {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            })}
           </p>
         </div>
         <button className="w-[167px] h-[52px] rounded-[100px] bg-[#131316] text-[#ffffff] text-[16px]">
