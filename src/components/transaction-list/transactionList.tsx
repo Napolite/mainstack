@@ -44,7 +44,7 @@ function TransactionList({ transaction }: { transaction: Transaction }) {
       </div>
       <div className="text-right">
         <div className="text-[16px] font-[700] leading-[150%] tracking-[-0.4px] mb-[5px]">
-          {transaction.amount.toLocaleString("en-US", {})}
+          USD {transaction.amount.toLocaleString("en-US", {})}
         </div>
         <div className="text-[14px] font-[500] text-[#56616B] tracking-[-0.2px] leading-[16px]">
           {transaction?.date}
