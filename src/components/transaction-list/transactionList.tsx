@@ -1,4 +1,3 @@
-import React from "react";
 import { GoArrowDownLeft as Success } from "react-icons/go";
 import { GoArrowDownRight as Failed } from "react-icons/go";
 
